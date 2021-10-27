@@ -39,9 +39,10 @@ function loop() {
 }
 
 // Event Stuff
-document.addEventListener("click", mouseclickHandler);
+document.addEventListener("keydown", keydownHandler);
 
-function mouseclickHandler(){
-    animate = !animate;
+function keydownHandler(event){
+    console.log(event.code)
+    if (event.code == "Space")
+    animate = true
 }
-
