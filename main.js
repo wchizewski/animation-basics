@@ -12,16 +12,15 @@ let rectSize = 80;
 let rectBlue = 255;
 let rectRed = 0;
 let rectGreen = 0;
-let frameCount = 0;
+
+let animate = false;
 
 // Main Program Loop (60 FPS)
 requestAnimationFrame(loop);
 function loop() {
     // Update Variables
-    frameCount++; 
-    console.log(frameCount)
 
-    if (rectX < 500) {
+    if (animate) {
         rectX += 1;
         rectSize += Math.random() * 20 - 10;
         rectBlue--;
@@ -38,3 +37,11 @@ function loop() {
 
     requestAnimationFrame(loop)
 }
+
+// Event Stuff
+document.addEventListener("click", mouseclickHandler);
+
+function mouseclickHandler(){
+    animate = !animate;
+}
+
